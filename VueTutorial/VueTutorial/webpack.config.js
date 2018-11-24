@@ -2,14 +2,16 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const WebpackMd5Hash = require('webpack-md5-hash');
 
 module.exports = {
-    entry: "./src/index.ts",
+    entry: "./wwwroot/src/index.ts",
     output: {
-        path: path.resolve(__dirname, "wwwroot"),
-        filename: "[name].[chunkhash].js",
-        publicPath: "/"
+        path: path.resolve(__dirname, "wwwroot/dist"),
+        filename: "build.js",
+        publicPath: "/dist"
     },
+    watch: true,
     resolve: {
         extensions: [".js", ".ts"]
     },
@@ -20,18 +22,23 @@ module.exports = {
                 use: "ts-loader"
             },
             {
-                test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader"]
+                test: /\.scss$/,
+                use: ['style-loader', MiniCssExtractPlugin.loader, "css-loader", 'sass-loader']
             }
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(["wwwroot/*"]),
-        new HtmlWebpackPlugin({
-            template: "./src/index.html"
-        }),
+        //new CleanWebpackPlugin(["wwwroot/src/dist/build.js"]),
         new MiniCssExtractPlugin({
-            filename: "css/[name].[chunkhash].css"
-        })
+            filename: "css/style.css",
+            disable: false,
+            allChunks: true
+        }),
+        new HtmlWebpackPlugin({
+            inject: false,
+            hash: true,
+            template: "./Views/Shared/_Layout.cshtml"
+        }),
+        new WebpackMd5Hash()
     ]
 };

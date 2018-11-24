@@ -21,6 +21,21 @@
       "deps": {},
       "name": "fuse-box-css",
       "version": "0.0.1"
+    },
+    "vue@0.0.0": {
+      "deps": {},
+      "name": "vue",
+      "version": "0.0.0"
+    },
+    "vue-router@0.0.0": {
+      "deps": {},
+      "name": "vue-router",
+      "version": "0.0.0"
+    },
+    "@/components@0.0.0": {
+      "deps": {},
+      "name": "@/components",
+      "version": "0.0.0"
     }
   },
   "flat": {
@@ -50,6 +65,23 @@
       "version": "0.0.1",
       "files": [
         "index.js"
+      ]
+    },
+    "vue@0.0.0": {
+      "name": "vue",
+      "version": "0.0.0",
+      "files": []
+    },
+    "vue-router@0.0.0": {
+      "name": "vue-router",
+      "version": "0.0.0",
+      "files": []
+    },
+    "@/components@0.0.0": {
+      "name": "@/components",
+      "version": "0.0.0",
+      "files": [
+        "Hello.js"
       ]
     }
   }

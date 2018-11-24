@@ -8,7 +8,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\src\index.ts" />
+    <Compile Remove="Assets\**" />
+    <Compile Remove="wwwroot\dist\css-resources\**" />
+    <Content Remove="Assets\**" />
+    <Content Remove="wwwroot\dist\css-resources\**" />
+    <EmbeddedResource Remove="Assets\**" />
+    <EmbeddedResource Remove="wwwroot\dist\css-resources\**" />
+    <None Remove="Assets\**" />
+    <None Remove="wwwroot\dist\css-resources\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,12 +30,7 @@
     <Folder Include="Areas\hallotestarea\Data\" />
     <Folder Include="Areas\hallotestarea\Models\" />
     <Folder Include="Areas\hallotestarea\Views\" />
-    <Folder Include="Assets\" />
-    <Folder Include="wwwroot\dist\css-resources\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <TypeScriptCompile Include="wwwroot\src\index.ts" />
+    <Folder Include="wwwroot\dist\css\" />
   </ItemGroup>
 
 </Project>

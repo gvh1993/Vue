@@ -1,3 +1,3 @@
-﻿var getText = function () {
-    return "Data from getText function in dep.js";
+﻿export function getText() {
+    return "Hello from lib.js";
 }

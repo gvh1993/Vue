@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":";;AAAA,uBAAqB;AACrB,4BAA0B","sourcesContent":["import \"./js/app.js\";\r\nimport \"./css/style.scss\";\r\n\r\n"]}

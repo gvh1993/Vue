@@ -1,6 +1,6 @@
-﻿//require('lib.js');
+﻿import { getText} from './lib.js';
 
 //document.getElementById("fillthis").innerHTML = getText();
 
 var header = document.getElementById("fillthis");
-header.innerHTML = "hello!";
+header.innerHTML = getText();
