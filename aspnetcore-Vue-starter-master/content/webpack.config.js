@@ -13,7 +13,7 @@ module.exports = () => {
     const extractCSS = new ExtractTextPlugin('site.css')
 
     return [{
-        mode: 'development'
+        mode: 'development',
         stats: { modules: false },
         entry: { 'main': './ClientApp/boot-app.js' },
         resolve: {

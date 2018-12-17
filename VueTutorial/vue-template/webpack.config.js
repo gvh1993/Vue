@@ -22,12 +22,12 @@ module.exports = (env) => {
                 'components': path.resolve(__dirname, './ClientApp/components'),
                 'views': path.resolve(__dirname, './ClientApp/views'),
                 'utils': path.resolve(__dirname, './ClientApp/utils'),
-                'api': path.resolve(__dirname, './ClientApp/store/api')
+                // 'api': path.resolve(__dirname, './ClientApp/store/api')
             } : {
                 'components': path.resolve(__dirname, './ClientApp/components'),
                 'views': path.resolve(__dirname, './ClientApp/views'),
                 'utils': path.resolve(__dirname, './ClientApp/utils'),
-                'api': path.resolve(__dirname, './ClientApp/store/api')
+                // 'api': path.resolve(__dirname, './ClientApp/store/api')
             }
         },
         entry: { 'main': './ClientApp/app.js' },
