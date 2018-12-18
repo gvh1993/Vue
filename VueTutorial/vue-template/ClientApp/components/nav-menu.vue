@@ -1,7 +1,7 @@
 <template>
     <div class="main-nav">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <button class="navbar-toggler" type="button" @click="toggleCollapsed">
+            <button class="navbar-toggler" type="button" @click="toggleCollapsed()">
                 <span class="navbar-toggler-icon"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>

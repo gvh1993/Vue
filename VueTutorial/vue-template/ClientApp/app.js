@@ -1,5 +1,6 @@
 import './css/site.scss';
 import 'bootstrap';
+
 import Vue from 'vue';
 import router from './router/index';
 import store from './store';
@@ -16,3 +17,9 @@ const app = new Vue({
     router,
     ...App
 }).$mount('#app-root');
+
+export {
+    app,
+    router,
+    store
+}
