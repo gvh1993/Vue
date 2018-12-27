@@ -7,10 +7,9 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 
 module.exports = (env) => {
-    mode: 'development';
     const isDevBuild = !(env && env.prod);
     const devMode = isDevBuild ? 'development' : 'production';
-
+    
     return [{
         mode: devMode,
         stats: { modules: false },

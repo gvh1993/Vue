@@ -8,9 +8,12 @@ import { sync } from 'vuex-router-sync'
 import App from './components/app';
 import { FontAwesomeIcon } from './icons';
 
+
 Vue.component('icon', FontAwesomeIcon)
 
 sync(store, router)
+
+console.log("Check it")
 
 const app = new Vue({
     store,
