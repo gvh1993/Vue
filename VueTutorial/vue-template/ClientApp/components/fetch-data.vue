@@ -4,7 +4,7 @@
 
         <p>This component demonstrates fetching data from the server.</p>
 
-        <table v-if="forecasts.length" class="table">
+        <table v-if="forecasts" class="table">
             <thead>
                 <tr>
                     <th>Date</th>
@@ -14,16 +14,57 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- <tr v-for="item in forecasts">
-                    <td>{{ item.dateFormatted }}</td>
-                    <td>{{ item.temperatureC }}</td>
-                    <td>{{ item.temperatureF }}</td>
-                    <td>{{ item.summary }}</td>
-                </tr> -->
+                <tr v-for="(forecast, index) in forecasts" :key="index" >
+                    <td>{{ forecast.dateFormatted }}</td>
+                    <td>{{ forecast.temperatureC }}</td>
+                    <td>{{ forecast.temperatureF }}</td>
+                    <td>{{ forecast.summary }}</td>
+                </tr>
             </tbody>
         </table>
-
-        <p v-else><em>Loading...</em></p>
+        <div v-else>
+            <p ><em>Loading...</em></p>
+            <h1><icon icon="spinner" pulse/></h1> 
+        </div>
+        
     </div>
 </template>
+
+<script>
+    export default {
+        
+        data (){
+            // define variables
+            return {
+                forecasts: null
+            }
+        },
+        computed:{
+            // mmutate the data
+        },
+
+        methods:{
+            // methods
+            async loadData(){
+                try{
+                    let response = await this.$http.get("/api/weather/forecasts")
+                    console.log(response.data.forecasts)
+                    this.forecasts = response.data
+                }catch(err){
+                    window.alert(err)
+                    console.log(err)
+                }
+            }
+        },
+        mounted: function(){
+            this.loadData()
+        },
+        
+    }
+    
+</script>
+
+<style>
+
+</style>
 

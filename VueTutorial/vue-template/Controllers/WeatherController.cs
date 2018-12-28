@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace vue_template.Controllers
 {
     [Route("api/[controller]")]
-    public class SampleDataController : Controller
+    public class WeatherController : Controller
     {
         private static string[] Summaries = new[]
         {
@@ -15,15 +15,15 @@ namespace vue_template.Controllers
         };
 
         [HttpGet("[action]")]
-        public IEnumerable<WeatherForecast> WeatherForecasts()
+        public IActionResult Forecasts()
         {
             var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Ok(Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
-            });
+            }));
         }
 
         public class WeatherForecast

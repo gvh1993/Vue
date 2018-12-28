@@ -48,6 +48,11 @@ module.exports = (env) => {
             filename: '[name].js',
             publicPath: './dist/'
         },
+        devServer:{
+            watchOptions: {
+                poll: true
+            }
+        },
         plugins: [
             new VueLoaderPlugin(),
             new MiniCssExtractPlugin({
